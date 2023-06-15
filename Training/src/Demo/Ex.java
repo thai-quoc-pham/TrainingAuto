@@ -435,8 +435,7 @@ public class Ex {
                     System.out.print(i + " ");
                 }
             }
-        }
-        else {
+        } else {
             System.out.println("Số A và số B là: " + soA);
         }
     }
@@ -452,27 +451,85 @@ public class Ex {
     }
 
     public static void Ex16() {
-        System.out.println("Example này chưa học tới");
+        System.out.print("Nhập số nguyên a: ");
+        int soA = scanner.nextInt();
+        do {
+            if (soA % 2 == 0) {
+                System.out.print(soA + " ");
+            }
+            soA++;
+        }
+        while (soA < 101);
     }
 
     public static void Ex17() {
-        System.out.println("Example này chưa học tới");
+        System.out.print("Nhập số nguyên a: ");
+        int soA = scanner.nextInt();
+        System.out.print("Nhập số nguyên b: ");
+        int soB = scanner.nextInt();
+        do {
+            if (soA % 3 == 0 && soA % 5 == 0) {
+                System.out.print(soA + " ");
+            }
+            soA++;
+        }
+        while (soA <= soB);
     }
 
     public static void Ex18() {
-        System.out.println("Example này chưa học tới");
+        int tong = 0;
+        int a = 1;
+        System.out.print("Nhập số nguyên a: ");
+        int soA = scanner.nextInt();
+        do {
+            if (a % 2 != 0) {
+                tong += a;
+            }
+            a++;
+        }
+        while (a <= soA);
+        System.out.println("Tổng các lẻ từ 0-" + soA + " là: " + tong);
     }
 
     public static void Ex19() {
-        System.out.println("Example này chưa học tới");
+        System.out.print("Nhập số nguyên a: ");
+        int soA = scanner.nextInt();
+        System.out.print("Nhập số nguyên b: ");
+        int soB = scanner.nextInt();
+        System.out.print("Các số chia hết cho 3 trong khoảng " + soA + "-" + soB + ": ");
+        do {
+            if (soA % 3 == 0) {
+                System.out.print(soA + " ");
+            }
+            soA++;
+        }
+        while (soA <= soB);
     }
 
     public static void Ex20() {
-        System.out.println("Example này chưa học tới");
+        int tich = 1;
+        int a = 1;
+        System.out.print("Nhập số nguyên a: ");
+        int soA = scanner.nextInt();
+        do {
+            tich *= a;
+            a++;
+        }
+        while (a <= soA);
+        System.out.println("Giai thừa của " + soA + " là: " + tich);
     }
 
     public static void Ex21() {
-        System.out.println("Example này chưa học tới");
+        int tong = 0;
+        int a = 1;
+        do {
+            if (a % 2 == 0) {
+                tong += a;
+            }
+            a++;
+        }
+        while (a < 11);
+        System.out.println("Tổng các số chẳng từ 1-10 là: " + tong);
     }
 
 }
