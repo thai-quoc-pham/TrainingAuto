@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Ex {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        //Ex1();
+        Ex1();
         Ex2();
     }
 
