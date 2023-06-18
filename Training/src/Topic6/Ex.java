@@ -1,81 +1,76 @@
 package Topic6;
 
-public class Ex {
+import java.util.Scanner;
 
+public class Ex {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.println("Example 1.......................................");
-        Ex1();
-        System.out.println("");
-        System.out.println("Example 2.......................................");
+        //Ex1();
         Ex2();
-        System.out.println("");
-        System.out.println("Example 3.......................................");
-        Ex3();
-        System.out.println("");
-        System.out.println("Example 4.......................................");
-        Ex4();
-        System.out.println("");
-        System.out.println("Example 5.......................................");
-        Ex5();
-        System.out.println("");
-        System.out.println("Example 6.......................................");
-        Ex6();
     }
 
     public static void Ex1() {
-        int arr[] = {2, 7, 6, 8, 9};
-        int temp = 0;
-        for (int i : arr) {
-            if (i > temp) {
-                temp = i;
+        int count = 0;
+        System.out.print("Nhập chuỗi kí tự: ");
+        String chuoi = scanner.nextLine();
+        char sub[] = chuoi.toCharArray();
+        for(int i = 0; i < sub.length; i++) {
+            if (Character.isUpperCase(sub[i])){
+                count++;
             }
         }
-        System.out.println("Số lớn nhất trong mảng là: " + temp);
+        System.out.println("Số ký tự viết hoa trong chuỗi: " + count);
     }
 
     public static void Ex2() {
-        int arr[] = {2, 7, 6, 8, 9};
-        System.out.println("Tổng của phần tử đầu tiền và cuối cùng trong mảng là: " + (arr[0] + arr[(arr.length - 1)]));
-    }
-
-    public static void Ex3() {
-        int arr[] = {2, 7, 6, 8, 9, 16, 17, 20};
-        System.out.print("Các số chẳn trong mảng là: ");
-        for (int i : arr) {
-            if (i % 2 == 0) {
-                System.out.print(i + " ");
+        int countA = 0;
+        String chuoi = "Automation Testing 345 Tutorials Online 789";
+        //Câu a
+        String subA[] = chuoi.split("");
+        for (int i = 0; i < subA.length; i++) {
+            if(subA[i].equalsIgnoreCase("a")) {
+                countA++;
             }
         }
-    }
-
-    public static void Ex4() {
-        float arr[] = {3, -7, 2, 5, 9, -6, 10, 12};
-        float tong = 0;
-        for (float i : arr) {
-            if (i > 0 && i % 2 != 0) {
-                tong += i;
+        System.out.println("Số lượng kí tự a là: " + countA);
+        //Câu b
+        boolean containsTesting = chuoi.contains("Testing");
+        if (containsTesting) {
+            System.out.println("Chuỗi trên có chứa chữ Testing.");
+        }
+        else {
+            System.out.println("Chuỗi trên không chứa chữ Testing.");
+        }
+        //Câu c
+        boolean checkStart = chuoi.startsWith("Automation");
+        if (checkStart) {
+            System.out.println("Chuỗi trên bắt đầu bằng chữ Automation.");
+        }
+        else {
+            System.out.println("Chuỗi trên không bắt đầu bằng chữ Automation.");
+        }
+        //Câu d
+        boolean checkEnd = chuoi.endsWith("Online");
+        if (checkEnd) {
+            System.out.println("Chuỗi trên kết thúc bằng chữ Online.");
+        }
+        else {
+            System.out.println("Chuỗi trên không kết thúc bằng chữ Online.");
+        }
+        //Câu e
+        System.out.println("Vị trí của từ Tutorials là: " + chuoi.indexOf("Tutorials"));
+        //Câu f
+        String cloneChuoi = chuoi;
+        cloneChuoi.replace("Online","Offline");
+        System.out.println(cloneChuoi);
+        //Câu g
+        int count = 0;
+        String[] subChuoi = chuoi.split("");
+        for (int i = 0; i < subChuoi.length; i++) {
+            if (subChuoi[i].matches("[0-9]+")) {
+                count++;
             }
         }
-        System.out.println("Tổng các số lẻ lớn hơn 0 là: " + (int) tong);
-    }
-
-    public static void Ex5() {
-        float arr[] = {3, -7, 2, 5, 9, -6, 10, 12};
-        System.out.print("Các số từ 0 đến 10 trong mảng là: ");
-        for (float i : arr) {
-            if (0 <= i && i <= 10) {
-                System.out.print((int) i + " ");
-            }
-        }
-    }
-
-    public static void Ex6() {
-        float arr[] = {3, 5, 7, 30, 10, 5, 8, 23, 0, -5};
-        float tong = 0;
-        for (float i : arr) {
-            tong += i;
-        }
-        System.out.println("Tổng các phần tử trong mảng là: " + (int) tong);
-        System.out.println("Trung bình cộng các giá trị trong mảng là: " + (tong / (arr.length)));
+        System.out.println("Số ký tự số trong chuỗi: " + count);
     }
 }
